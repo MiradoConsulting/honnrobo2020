@@ -12,12 +12,12 @@ public class SERPENTINE extends AdvancedRobot
 	 * run: SERPENTINE's default behavior
 	 */
 	public void run() {
-	    setColors(Color.red, Color.red, Color.red);
+	    setColors(Color.red, Color.blue, Color.blue);
         setAdjustGunForRobotTurn(true);
         setAdjustRadarForGunTurn(false);
 		
 		while(true) {
-			turnRadarRight(360);
+			turnGunLeft(160);
 		}
 	}
 
@@ -26,8 +26,12 @@ public class SERPENTINE extends AdvancedRobot
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
 		double bearing = e.getBearing();
+		double range = e.getDistance();
     	
-		fire(3);
+		if (range < 200) {
+			fire(3);
+		}
+		
         setTurnRightDegrees(bearing + 20);
         setTurnGunRight(getHeading() - getRadarHeading() + bearing);
         setAhead(500);
