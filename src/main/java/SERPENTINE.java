@@ -29,10 +29,12 @@ public class SERPENTINE extends AdvancedRobot
 		double range = e.getDistance();
     	
 		if (range < 200) {
+			fire(2);
+		} else if (range < 100) {
 			fire(3);
 		}
 		
-        setTurnRightDegrees(bearing + 20);
+        setTurnRightDegrees(bearing + 30);
         setTurnGunRight(getHeading() + bearing - getRadarHeading());
         setAhead(500);
 	}
