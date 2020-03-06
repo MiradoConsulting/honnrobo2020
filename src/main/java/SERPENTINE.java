@@ -33,7 +33,7 @@ public class SERPENTINE extends AdvancedRobot
 		}
 		
         setTurnRightDegrees(bearing + 20);
-        setTurnGunRight(getHeading() - getRadarHeading() + bearing);
+        setTurnGunRight(getHeading() + bearing - getRadarHeading());
         setAhead(500);
 	}
 
@@ -50,6 +50,6 @@ public class SERPENTINE extends AdvancedRobot
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		
+		setTurnRight(50);
 	}	
 }
