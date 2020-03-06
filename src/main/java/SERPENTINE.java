@@ -34,7 +34,12 @@ public class SERPENTINE extends AdvancedRobot
 			fire(3);
 		}
 		
-        setTurnRightDegrees(bearing + 30);
+		
+		setTurnRightDegrees(bearing + 30);
+		if (range < 150) {
+			setTurnRightDegrees(bearing + 180);
+		}
+		
         setTurnGunRight(getHeading() + bearing - getRadarHeading());
         setAhead(500);
 	}
@@ -43,8 +48,7 @@ public class SERPENTINE extends AdvancedRobot
 	 * onHitByBullet: What to do when you're hit by a bullet
 	 */
 	public void onHitByBullet(HitByBulletEvent e) {
-		// Replace the next line with any behavior you would like
-		back(10);
+
 	}
 	
 	/**
@@ -52,6 +56,10 @@ public class SERPENTINE extends AdvancedRobot
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		setTurnRight(50);
-	}	
+		setTurnRight(160);
+	}
+	public void onHitRobot(HitRobotEvent e) {
+		// Replace the next line with any behavior you would like
+		setTurnRight(160);
+	}
 }
