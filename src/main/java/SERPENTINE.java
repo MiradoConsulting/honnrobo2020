@@ -35,8 +35,6 @@ public class SERPENTINE extends AdvancedRobot
         setTurnRightDegrees(bearing + 20);
         setTurnGunRight(getHeading() - getRadarHeading() + bearing);
         setAhead(500);
-		
-		scan();
 	}
 
 	/**
