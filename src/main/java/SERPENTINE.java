@@ -30,13 +30,18 @@ public class SERPENTINE extends AdvancedRobot
     	
 		if (range < 200) {
 			fire(2);
-		} else if (range < 100) {
+		} else if (range < 150) {
 			fire(3);
 		}
 		
-		setTurnRightDegrees(bearing + 30);
+		if (bearing < 0) {
+			setTurnRightDegrees(bearing + 45);
+		} else {
+			setTurnRightDegrees(bearing - 45);
+		}
+		
 		if (range < 150) {
-			setTurnRightDegrees(bearing + 180);
+			setTurnRightDegrees(90);
 		}
 		
         setTurnGunRight(getHeading() + bearing - getRadarHeading());
