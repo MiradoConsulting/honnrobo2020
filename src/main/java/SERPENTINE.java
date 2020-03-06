@@ -34,7 +34,6 @@ public class SERPENTINE extends AdvancedRobot
 			fire(3);
 		}
 		
-		
 		setTurnRightDegrees(bearing + 30);
 		if (range < 150) {
 			setTurnRightDegrees(bearing + 180);
@@ -56,10 +55,10 @@ public class SERPENTINE extends AdvancedRobot
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		setTurnRight(160);
+		turnRight(70);
 	}
 	public void onHitRobot(HitRobotEvent e) {
 		// Replace the next line with any behavior you would like
-		setTurnRight(160);
+		turnRight(70);
 	}
 }
