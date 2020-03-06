@@ -1,5 +1,5 @@
 import robocode.*;
-//import java.awt.Color;
+import java.awt.Color;
 
 // API help : http://robocode.sourceforge.net/docs/robocode/robocode/Robot.html
 
@@ -12,6 +12,7 @@ public class SERPENTINE extends AdvancedRobot
 	 * run: SERPENTINE's default behavior
 	 */
 	public void run() {
+	    setColors(Color.red, Color.red, Color.red);
         setAdjustGunForRobotTurn(true);
         setAdjustRadarForGunTurn(false);
 		
